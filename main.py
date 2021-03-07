@@ -24,23 +24,23 @@ while True:
     try:
         num = int(input('How many passwords?\n '))
         len = int(input('Password length?\n '))
-        flag_nums = input('Include numbers? (yes no)\n')
-        flag_lowers = input('Include lowercase letters? (yes no)\n ')
-        flag_uppers = input('Include uppercase letters? (yes no)\n ')
-        flag_symbols = input('Include special symbols? (yes no)\n ')
-        flag_complex = input('Include confusing letters, like "il1Lo0O"? (yes no)\n')
+        flag_nums = input('Include numbers? (y n)\n')
+        flag_lowers = input('Include lowercase letters? (y n)\n ')
+        flag_uppers = input('Include uppercase letters? (y n)\n ')
+        flag_symbols = input('Include special symbols? (y n)\n ')
+        flag_complex = input('Include confusing letters, like "il1Lo0O"? (y n)\n')
     except ValueError:
         print('This one should be a number. Try again\n')
         continue
-    chars += digits if flag_nums.lower() == 'yes' else ''
-    chars += lowercase_letters if flag_lowers.lower() == 'yes' else ''
-    chars += uppercase_letters if flag_uppers.lower() == 'yes' else ''
-    chars += punctuation if flag_symbols.lower() == 'yes' else ''
-    chars += complex if flag_complex.lower() == 'yes' else ''
+    chars += digits if flag_nums.lower() == 'y' else ''
+    chars += lowercase_letters if flag_lowers.lower() == 'y' else ''
+    chars += uppercase_letters if flag_uppers.lower() == 'y' else ''
+    chars += punctuation if flag_symbols.lower() == 'y' else ''
+    chars += complex if flag_complex.lower() == 'y' else ''
     print('Password can`t be empty lol XD') if chars == '' else print('\n' + generate_password(len, chars) + '\n')
 
-    exit = input('Run again? Type "no" to exit\n')
-    if exit.lower() == 'no':
+    exit = input('Run again? Type "n" to exit\n')
+    if exit.lower() == 'n':
         break
     else:
         continue
