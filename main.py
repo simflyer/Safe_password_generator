@@ -37,8 +37,8 @@ while True:
     chars += uppercase_letters if flag_uppers.lower() == 'yes' else ''
     chars += punctuation if flag_symbols.lower() == 'yes' else ''
     chars += complex if flag_complex.lower() == 'yes' else ''
-    print('Password can`t be empty lol XD') if chars == '' else print(generate_password(len, chars))
-    print()
+    print('Password can`t be empty lol XD') if chars == '' else print('\n' + generate_password(len, chars) + '\n')
+
     exit = input('Run again? Type "no" to exit\n')
     if exit.lower() == 'no':
         break
