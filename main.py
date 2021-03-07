@@ -1,11 +1,11 @@
-import random
+import secrets
 import time
 def generate_password(len, chars):
     passwords = []
     password = ''
     for circle in range(num):
         for symbol in range(len):
-            password += random.choice(chars)
+            password += secrets.choice(chars)
         passwords.append(password)
         password = ''
     return '\n'.join(passwords)
